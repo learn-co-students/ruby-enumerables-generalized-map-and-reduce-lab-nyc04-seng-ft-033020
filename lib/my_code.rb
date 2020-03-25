@@ -1,11 +1,11 @@
 def map (array)
-    new_array = []
+    n_array = []
     x = 0
     while x < array.length do
-        new_array.push(yield(array[x]))
+        n_array << yield(array[x])
         x += 1
     end
-    new_array
+    n_array
 end
 
 def reduce (array, starting_point = nil)
@@ -16,10 +16,10 @@ def reduce (array, starting_point = nil)
         sum = array[0]
         x = 1
     end
-    
+
     while x < array.length do
-       sum = yield(sum, array[x])
-       x += 1
+        sum = yield(sum, array[x])
+        x += 1
     end
     sum
 end
